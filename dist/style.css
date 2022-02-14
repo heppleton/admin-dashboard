@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-    background-image: linear-gradient(to bottom right, magenta, cyan);
+    background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) .5%, rgba(0, 0, 0, 0) .5%, rgba(0, 0, 0, 0) 1%),
+                    repeating-linear-gradient(135deg, rgba(0, 0, 0, 1) 0.1%, rgba(0, 0, 0, 1) .5%, rgba(0, 0, 0, 0) .5%, rgba(0, 0, 0, 0) 1%),
+                    linear-gradient(135deg, magenta, cyan);
     margin: 0;
     height: 100vh;
     display: grid;
-    grid-template-columns: 15vw auto;
-    grid-template-rows: 15vh auto;
+    grid-template-columns: max(200px, 15vw) auto;
+    grid-template-rows: max(200px, 15vh) auto;
     font-family: "Roboto";
 }
 
@@ -25,12 +27,78 @@ body {
 .title {
     font-size: 1.5rem;
     font-weight: bold;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: max-content auto;
+    align-items: center;
+}
+
+.side-options {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: max-content auto;
+    align-items: center;
 }
 
 .header {
     background-color: yellow;
     grid-area: 1 / 2 / 2 / 3;
 }
+
+.header-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem 2.5rem;
+    gap: 2rem;
+    font-weight: bold;
+}
+
+.header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
+    flex: 1;
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: yellow;
+    height: 2rem;
+    font-family: "Roboto";
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatar {
+    min-height: 3rem;
+    min-width: 3rem;
+}
+
+.big-avatar {
+    min-height: 5rem;
+    min-width: 5rem; 
+}
+
+.nameholder:first-child {
+    font-size: 0.8rem;
+    color: magenta;
+}
+/*
+.nameholder:last-child {
+    font-size: 2rem;
+    color: magenta;
+}*/
 
 .main-content {
     grid-area: 2 / 2 / 3 / 3;
